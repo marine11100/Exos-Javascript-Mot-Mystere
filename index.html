@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    
+</head>
+<body>
+    <p>
+
+    </p>
+
+<script>
+var myArray= new Array('Voiture','Clé', 'Table', 'Téléphone', 'Jardin', 'Soleil','Chèvre','Développeur', 'Ballon', 'Guitare', 'Lunettes', 'Nuage','Ordinateur','Livre','Chien','Culotte', 'Mur','Chlorophylle','Portefeuille','Post-it', 'Couleur');
+myArray.sort();
+/*for (var i = 0; i < myArray.length; i++) {
+            document.write(myArray[i]+ "<br/>");//Possible de faire plus simple avec table.join.
+            }*/
+            //var formulaire = document.createElement ('form');
+            document.body.innerHTML ='<form name="formulaire">'+'<label for="nom">Votre mot : </label><input type="text" name="mot" value="" />'+'<br/><button type="button" value="">Submit</button>' ;
+                var randomItem = myArray[Math.floor(Math.random()*myArray.length)];
+                document.getElementsByTagName('button')[0].addEventListener('click',comparer);
+                function comparer(){
+                    var reponse=document.getElementsByName('mot')[0].value;
+                    if(reponse==randomItem){
+                        document.write('You win');
+                    }
+                    else{
+                        alert('Tes nuuuuuuuuuuuuuuuuuuuuuuuuul');
+                    }
+                }
+
+                document.getElementsByTagName('button')[0].addEventListener('click', compteur);
+                function compteur(){
+                    if(localStorage.getItem('cliquer',nombre)==null){
+                    var nombre=0;
+                    nombre++;
+                    localStorage.setItem('cliquer', nombre);
+                }
+                else{
+                    var nombre=localStorage.getItem('cliquer', nombre);
+                    nombre++;
+                    localStorage.setItem('cliquer', nombre);
+                }
+                alert('Vous avez essayez '+ localStorage.getItem('cliquer')+' fois!');
+            }
+            
+
+
+
+//Creation formulaire en JS :'( ok
+
+//Récuperation saisie utilisateur
+
+//Tirage mot aléatoire
+
+//Comparer saisie user
+
+//Afficher le résultat.
+
+
+</script>
+</body>
+</html>
